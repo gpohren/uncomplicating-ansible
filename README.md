@@ -4,6 +4,20 @@ Project for Kubernetes cluster installation using Ansible and AWS
 
 ## Create EC2 instances
 
+Adjust variables (provisioning/roles/creating-instances/vars/main.yml)
+
+```bash
+---
+# vars file for creating-instances
+instance_type: t2.medium
+sec_group_name: giropops
+image: ami-00ddb0e5626798373
+keypair: ansible-class
+region: us-east-1
+count: 3
+profile: giropops
+```
+
 Execute in provisioning
 
 ```bash
