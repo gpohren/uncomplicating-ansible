@@ -2,11 +2,14 @@
 
 Project for Kubernetes cluster installation using Ansible and AWS
 
+[LINUXtips - Uncomplicating Ansible](https://www.linuxtips.io/product-page/descomplicando-o-ansible)
+
 ## Create EC2 instances
 
-Adjust variables (provisioning/roles/creating-instances/vars/main.yml)
+Adjust variables
 
 ```bash
+$ cat provisioning/roles/creating-instances/vars/main.yml
 ---
 # vars file for creating-instances
 instance_type: t2.medium
@@ -24,9 +27,10 @@ Execute in provisioning
 ansible-playbook -i hosts main.yml
 ```
 
-Public IP addresses and private IP addresses generated on the hosts (provisioning)
+Public IP addresses and private IP addresses generated on the hosts
 
 ```bash
+$ cat provisioning/hosts
 [kubernetes]
 172.31.24.64
 172.31.26.171
@@ -38,9 +42,10 @@ Public IP addresses and private IP addresses generated on the hosts (provisionin
 
 ## Install Kubernetes
 
-Insert IP addresses generated on hosts (install_k8s)
+Insert IP addresses generated on hosts
 
 ```bash
+$ cat install_k8s/hosts
 [k8s-master]
 52.58.176.7
 
